@@ -13,3 +13,12 @@ jumps over the lazy dog"  \\ New lines in verbatim strings are preserved
 
 By default, every number with decimal fraction is of `double` type, unless we add `f` after the number. So: `3.14` as double, `3.14f` is float.
 
+###### Casting.
+
+```csharp
+double d = 1.0;
+float f = (float)d;
+int i;
+i = (int)2.5;
+```
+
