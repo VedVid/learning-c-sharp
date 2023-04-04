@@ -1,4 +1,4 @@
-###### Verbatim strings.
+###### Verbatim strings
 
 Verbatim strings that do not use escape characters and preserves new lines are created by putting 'at' sign just before the string.
 ```csharp
@@ -10,7 +10,7 @@ jumps over the lazy dog"  \\ New lines in verbatim strings are preserved
 ```
 
 
-###### float and double literals.
+###### float and double literals
 
 By default, every number with decimal fraction is of `double` type, unless we add `f` after the number. So: `3.14` as double, `3.14f` is float.
 
@@ -95,4 +95,22 @@ Console.WriteLine("i: {0,-10:0} f: {1,-15:0.00}", 0, 0);
 // i: 150       f: 1234.57
 // i: 0         f: 0.00
 ```
+
+
+###### Values and references
+
+Looks like C# by default passes variables by values. That is considerable change in comparison to Python that passes everything as reference, but should not be too different to Go that has values and pointers, should it?
+
+To pass argument by reference instead by value, simply add `ref` before type: `foo(ref int bar);`.
+
+
+###### in and out parameters
+
+C# supports `in` and `out` parameters. `in` parameters can not be changed by method, and `out` parameters must by changed by method. A dabbled in Ada and D that have similar concepts – not sure about implementation details though. According to MS docs, `in`, `out`, and `ref` may cause problems with method overloading.
+
+
+###### Contracts
+
+C# allows using design-by-contract, by supporting preconditions (`Contract.Requires`), postconditions (`Contract.Ensures`) and invariants (`Contract.Invariant`). Invariant methods must be marked as such by `[ContractInvariantMethod]` statement just above method declaration.
+More info is needed to use contracts properly.
 
