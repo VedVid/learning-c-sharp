@@ -38,3 +38,6 @@ for (setup; finish; update)
     // do something here
 ```
 
+###### Every statement returns a value
+
+E.g. `i = (j=0);` sets both `i` and `j` variables to 0.
