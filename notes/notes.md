@@ -46,3 +46,53 @@ for (setup; finish; update)
 E.g. `i = (j=0);` sets both `i` and `j` variables to 0.
 
 
+###### Printing tips and tricks
+
+```csharp
+// Using placeholders:
+int i = 150;
+double f = 1234.56789;
+Console.WriteLine("i: {0} f: {1}", i, f);
+Console.WriteLine("i: {1} f: {0}", f, i);
+// It works similarly to Python's .format used
+// before f-strings were a thing.
+
+// Adjusting real number precision:
+Console.WriteLine("i: {0:0} f: {1:0.00}", i, f);
+/* First number, for example '1' after 'f', has the same role
+   as in the first example, so: positioning.
+   '0.00' specifies precision, where '0' stands for
+   one or more digits.
+   Result:
+   i: 150 f: 1234.57
+*/
+
+// Specifying the number of printed digits:
+Console.WriteLine("i: {0:0000} f: {1:00000.00}", i, f);
+// Result:
+// i: 0150 f: 01234.57
+
+// Really fancy formatting:
+Console.WriteLine("i: {0:#,##0} f: {1:##,##0.00}", i, f);
+// '#' in the format string means "put a digit here if you have one".
+// Looks like notation I know from formatting spreadsheets.
+// Result:
+// i: 150 f: 1,234.57
+
+// Printing in columns:
+Console.WriteLine("i: {0,10:0} f: {1,15:0.00}", i, f);
+Console.WriteLine("i: {0,10:0} f: {1,15:0.00}", 0, 0);
+/* Result:
+   i:        150 f:         1234.57
+   i:          0 f:            0.00
+   Integer value in printed in a column 10 characters wide, and
+   the double is printed in a 15 character wide column.
+   Output is right-justified. To make it left-justified,
+   width of columns should be negative, like that:*/
+Console.WriteLine("i: {0,-10:0} f: {1,-15:0.00}", i, f);
+Console.WriteLine("i: {0,-10:0} f: {1,-15:0.00}", 0, 0);
+// Result:
+// i: 150       f: 1234.57
+// i: 0         f: 0.00
+```
+
