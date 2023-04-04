@@ -108,3 +108,9 @@ To pass argument by reference instead by value, simply add `ref` before type: `f
 
 C# supports `in` and `out` parameters. `in` parameters can not be changed by method, and `out` parameters must by changed by method. A dabbled in Ada and D that have similar concepts – not sure about implementation details though. According to MS docs, `in`, `out`, and `ref` may cause problems with method overloading.
 
+
+###### Contracts
+
+C# allows using design-by-contract, by supporting preconditions (`Contract.Requires`), postconditions (`Contract.Ensures`) and invariants (`Contract.Invariant`). Invariant methods must be marked as such by `[ContractInvariantMethod]` statement just above method declaration.
+More info is needed to use contracts properly.
+
