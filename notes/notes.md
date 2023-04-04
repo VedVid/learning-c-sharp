@@ -9,3 +9,7 @@ brown fox
 jumps over the lazy dog"  \\ New lines in verbatim strings are preserved
 ```
 
+###### float and double literals.
+
+By default, every number with decimal fraction is of `double` type, unless we add `f` after the number. So: `3.14` as double, `3.14f` is float.
+
