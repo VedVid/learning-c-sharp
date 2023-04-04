@@ -18,5 +18,7 @@ class MethodDemo
         silly(500);
 
         Console.WriteLine("i is: " + silly2(1));
+        silly2(5);  // Discarding result.
+        _ = silly2(5);  // Explicitely discarding result.
     }
 }
