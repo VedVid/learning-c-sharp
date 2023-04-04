@@ -9,6 +9,7 @@ brown fox
 jumps over the lazy dog"  \\ New lines in verbatim strings are preserved
 ```
 
+
 ###### float and double literals.
 
 By default, every number with decimal fraction is of `double` type, unless we add `f` after the number. So: `3.14` as double, `3.14f` is float.
@@ -21,6 +22,7 @@ float f = (float)d;
 int i;
 i = (int)2.5;
 ```
+
 
 ###### Loops
 
@@ -38,6 +40,9 @@ for (setup; finish; update)
     // do something here
 ```
 
+
 ###### Every statement returns a value
 
 E.g. `i = (j=0);` sets both `i` and `j` variables to 0.
+
+
