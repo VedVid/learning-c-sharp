@@ -22,3 +22,19 @@ int i;
 i = (int)2.5;
 ```
 
+###### Loops
+
+There are three looping constructs in C#.
+
+```csharp
+do
+	// do something here
+while (condition);
+
+while (condition)
+    // do something here
+
+for (setup; finish; update)
+    // do something here
+```
+
