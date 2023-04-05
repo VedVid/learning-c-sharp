@@ -137,5 +137,20 @@ string[] weekDays =
 // Arrays that are not initialized on declaration
 // must be explicitely typed.
 string[] calendarTypes = new string[];
+
+// Multidimensional arrays are declared and accessed
+// differently than I'm used to.
+// Declaring 2D array:
+int[,] squareWeights = 
+{
+    {1, 0, 1},
+	{0, 2, 0},
+	{1, 0, 1}
+};
+// Accessing: arr[col, row]
+int w = squareWeights[1, 1];  // 2
+// 3D array:
+int[,,] board = new int[3, 3, 3];
+board[1, 1, 1] = 1;
 ```
 
