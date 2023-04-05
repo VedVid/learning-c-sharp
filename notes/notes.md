@@ -152,5 +152,12 @@ int w = squareWeights[1, 1];  // 2
 // 3D array:
 int[,,] board = new int[3, 3, 3];
 board[1, 1, 1] = 1;
+
+// Getting array length also is different:
+int l1 = squareWeights(0);
+int l2 = squareWeights(1);
+// instead of
+// l1 = squareWeights[0]
+// l2 = squareWeights[0][1]
 ```
 
