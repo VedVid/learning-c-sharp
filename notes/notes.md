@@ -26,7 +26,7 @@ i = (int)2.5;
 
 ###### Loops
 
-There are three looping constructs in C#.
+There are four looping constructs in C#.
 
 ```csharp
 do
@@ -37,6 +37,9 @@ while (condition)
     // do something here
 
 for (setup; finish; update)
+    // do something here
+
+foreach (element in iterable)
     // do something here
 ```
 
@@ -113,4 +116,26 @@ C# supports `in` and `out` parameters. `in` parameters can not be changed by met
 
 C# allows using design-by-contract, by supporting preconditions (`Contract.Requires`), postconditions (`Contract.Ensures`) and invariants (`Contract.Invariant`). Invariant methods must be marked as such by `[ContractInvariantMethod]` statement just above method declaration.
 More info is needed to use contracts properly.
+
+
+###### Arrays
+
+```csharp
+// Explicitely typed arrays.
+string[] monthNames = new string[]
+{
+    null,  // null element for non-existent month 0
+	"January", "February", ...
+};
+
+// Implicitely typed arrays.
+string[] weekDays = 
+{
+    "Monday", "Tuesday", ...
+};
+
+// Arrays that are not initialized on declaration
+// must be explicitely typed.
+string[] calendarTypes = new string[];
+```
 
