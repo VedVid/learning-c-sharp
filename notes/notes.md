@@ -161,3 +161,10 @@ int l2 = squareWeights(1);
 // l2 = squareWeights[0][1]
 ```
 
+
+###### Exceptions
+
+Exceptions seem quite similar to their Python equivalent, it's just `try-catch` instead of `try-except`. However, there are two differences.
+1. In Python you can use `try-except-else-finally`. After basic googling I did not find reference for such construct, it's either `try-catch-finally` or `try-catch-else`. In Python, `else` block is executed only when exception has not been raised, and `finally` block is executed regardless of exceptions. As far as I can tell, it's the same for C#.
+2. In the C# Yellow Book, in chapter 3.4.7 Exception Etiquette, we can read that "Exceptions are best reserved for situations when your program really cannot go any further." That's a different mindset, in Python you quite often use `try-except` for flow control.
+
