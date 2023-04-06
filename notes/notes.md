@@ -211,7 +211,23 @@ class Foo()
 {
     static int bar = 0;
 }
+
 Foo test = new Foo();
 Foo.bar = 10;
+```
+Still, a better practice is to make static members private, and provide method to update the member.
+```csharp
+class Foo()
+{
+    static int bar = 0;
+	
+	public void SetBar(int value)
+	{
+	    bar = value;
+	}
+}
+
+Foo test = new Foo();
+Foo.SetBar(10);
 ```
 
