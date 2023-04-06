@@ -205,4 +205,13 @@ class Foo:
 ```
 ?
 What's about methods? Are all Python's methods like C# static methods?
+Also, in C# you actually call class (not instance!) member to change a static member:
+```csharp
+class Foo()
+{
+    static int bar = 0;
+}
+Foo test = new Foo();
+Foo.bar = 10;
+```
 
