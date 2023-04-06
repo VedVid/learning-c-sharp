@@ -179,4 +179,10 @@ switch (command)
 	case val2:
 	    // handles cases for both val1 and val2.
 }
+```
+
+
+###### Setters and getters
+
+In Python, it is quite common change the class member directly (at least for the simple operations, like `player.active = False` when the turn ends). From the Yellow book I took an impression that changing members directly is kind of anti-pattern in C#. Well, it's beginners book so maybe it tries to teach what's _usually best_, but still...
 
