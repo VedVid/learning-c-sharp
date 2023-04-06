@@ -179,4 +179,55 @@ switch (command)
 	case val2:
 	    // handles cases for both val1 and val2.
 }
+```
+
+
+###### Setters and getters
+
+In Python, it is quite common change the class member directly (at least for the simple operations, like `player.active = False` when the turn ends). From the Yellow book I took an impression that changing members directly is kind of anti-pattern in C#. Well, it's beginners book so maybe it tries to teach what's _usually best_, but still...
+
+
+###### static members
+
+Rob Miles in his book writes that "The static keyword lets us create members which are not held in an instance, but in the class itself." So it's like class members in Python, declared before `__init__`?
+
+Is
+```csharp
+class Foo
+{
+    static public int bar = 0;
+}
+```
+equivalent to
+```python
+class Foo:
+    bar = 0
+```
+?
+What's about methods? Are all Python's methods like C# public static methods?
+Also, in C# you actually call class (not instance!) member to change a static member:
+```csharp
+class Foo
+{
+    static int bar = 0;
+}
+
+Foo test = new Foo();
+Foo.bar = 10;
+```
+Still, a better practice is to make static members private, and provide method to update the member.
+```csharp
+class Foo
+{
+    static int bar = 0;
+	
+	public void SetBar(int value)
+	{
+	    bar = value;
+	}
+}
+
+Foo test = new Foo();
+Foo.SetBar(10);
+```
 
