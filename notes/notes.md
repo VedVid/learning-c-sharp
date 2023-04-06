@@ -204,4 +204,5 @@ class Foo:
     bar = 0
 ```
 ?
+What's about methods? Are all Python's methods like C# static methods?
 
