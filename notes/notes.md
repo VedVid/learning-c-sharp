@@ -186,3 +186,22 @@ switch (command)
 
 In Python, it is quite common change the class member directly (at least for the simple operations, like `player.active = False` when the turn ends). From the Yellow book I took an impression that changing members directly is kind of anti-pattern in C#. Well, it's beginners book so maybe it tries to teach what's _usually best_, but still...
 
+
+###### static members
+
+Rob Miles in his book writes that "The static keyword lets us create members which are not held in an instance, but in the class itself." So it's like class members in Python, declared before `__init__`?
+
+Is
+```csharp
+class Foo()
+{
+    static public int bar = 0;
+}
+```
+equivalent to
+```python
+class Foo:
+    bar = 0
+```
+?
+
