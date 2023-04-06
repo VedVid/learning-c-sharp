@@ -193,7 +193,7 @@ Rob Miles in his book writes that "The static keyword lets us create members whi
 
 Is
 ```csharp
-class Foo()
+class Foo
 {
     static public int bar = 0;
 }
@@ -204,10 +204,10 @@ class Foo:
     bar = 0
 ```
 ?
-What's about methods? Are all Python's methods like C# static methods?
+What's about methods? Are all Python's methods like C# public static methods?
 Also, in C# you actually call class (not instance!) member to change a static member:
 ```csharp
-class Foo()
+class Foo
 {
     static int bar = 0;
 }
@@ -217,7 +217,7 @@ Foo.bar = 10;
 ```
 Still, a better practice is to make static members private, and provide method to update the member.
 ```csharp
-class Foo()
+class Foo
 {
     static int bar = 0;
 	
