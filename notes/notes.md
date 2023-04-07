@@ -231,3 +231,32 @@ Foo test = new Foo();
 Foo.SetBar(10);
 ```
 
+
+###### Method overloading and optional parameters
+
+```csharp
+public Foo(int x)  // v1
+{
+   // Do something
+}
+
+public Foo(int x, int y)  // v2
+{
+    // Do something
+}
+
+Foo(1);     // Calls v1
+Foo(1, 2);  // Calls v2
+
+// I still believe that optional parameters
+// are more elegant solution (assuming that there is
+// a logical default value provided for optional parameter).
+public Bar(int x, int y = 0)  // v3
+{
+    // Do something
+}
+
+Bar(1);     // x == 1, y == 0
+Bar(1, 2);  // x == 1, y == 2
+```
+
