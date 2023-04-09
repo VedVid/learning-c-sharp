@@ -275,3 +275,77 @@ Baz(1);     // x == 1, y == 0
 Baz(1, 2);  // x == 1, y == 2
 ```
 
+
+###### Inheritance and protection levels
+
+```csharp
+// Declare interface
+public interface IFoo
+{
+    void DoSomething();
+	void DoAnotherThing();
+	void DoNothing();
+}
+
+// Parent, "base class", that implements IFoo interface
+public class FooParent: IFoo
+{
+    // Child can't access private members of parent.
+    private int bar = 0;
+	// But can access protected memebers.
+	protected int baz = 0;
+	// Method must be virtual (or abstract) to allow overriding
+	// by child.
+	public virtual void DoSomething()
+	{
+	    // Actually do something with bar and baz.
+	}
+	// Abstract methods are empty and will be implemented by child.
+	public abstract void DoAnotherThing()
+	// That's not a good code!
+	{
+	}
+	// Since the method below is neither virtual nor abstract,
+	// it can not be overriden by child.
+	public void DoNothing()
+	{
+	    // Do... nothing, I guess?
+	}
+}
+
+// Child class, that:
+// 1) inherits from FooParent, and
+// 2) implements IFoo interface
+public class FooChild: FooParent, IFoo
+{
+    public override void DoSomething()
+	{
+	    // Do something with baz,
+		// but not with bar since bar is private!
+	}
+	
+	public override void DoAnotherThing()
+	{
+	    // Implement methods. Parent has this method declared as
+		// abstract, so empty, methods.
+	}
+	
+	// This won't compile! You can't override methods
+	// that are neither virtual nor abstract.
+	//public override void DoNothing()
+	//{
+	//    // ...
+	//}
+	// But child can call this method, since it's inherited.
+}
+```
+
+Looks like every Python method is virtual by default.
+I *guess* you could call methods like that one below 
+*abstract methods* since they do not implement functionality?
+```python
+class Foo
+    def Bar():
+	    raise NotImplementedError
+```
+
