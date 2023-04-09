@@ -337,6 +337,18 @@ public class FooChild: FooParent, IFoo
 	//    // ...
 	//}
 	// But child can call this method, since it's inherited.
+	
+	// If child's method makes only slight change
+	// to the parent's method, you can use "base method", e.g.:
+	// return base.DoSomething() will use method of FooParent
+	// rather to FooChild.
+	
+	// Instead overriding, you can also make replacement method:
+	public new void DoSomething()
+	{
+	    // Do something
+	}
+	// The parent method does not need to be abstract nor virtual.
 }
 ```
 
@@ -348,4 +360,5 @@ class Foo
     def Bar():
 	    raise NotImplementedError
 ```
+
 
